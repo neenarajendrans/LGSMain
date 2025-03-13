@@ -134,3 +134,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const blogPost = button.closest('.blog-post');
+            const content = blogPost.querySelector('.blog-content');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                button.textContent = 'Read Less ...';
+            } else {
+                content.classList.add('hidden');
+                button.textContent = 'Read More ...';
+            }
+        });
+    });
