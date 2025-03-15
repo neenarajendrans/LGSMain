@@ -301,7 +301,7 @@
       right: -100%;
       top: 80px;
       flex-direction: column;
-      background: linear-gradient(135deg, #001F3F, #004080);
+      background:#1d83ff;
       width: 100%;
       height: calc(100vh - 80px);
       text-align: center;
@@ -377,7 +377,7 @@
       right: -100%;
       top: 80px;
       flex-direction: column;
-      background: linear-gradient(135deg, #001F3F, #004080);
+      background: #1d83ff;
       width: 100%;
       height: calc(100vh - 80px);
       text-align: center;
@@ -1197,6 +1197,7 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 50px;
+  
 }
 
 .service-box {
@@ -1435,6 +1436,7 @@ h2 {
   .blog-header {
     height: 350px;
   }
+
 }
 
 @media (max-width: 576px) {
@@ -1458,10 +1460,10 @@ h2 {
     font-size: 14px;
   }
 }
+/* Base Styles */
 #contact {
   background-image: url('images/img7.jpg');
   background-size: cover;
-  background-position: center;
   background-attachment: fixed;
   position: relative;
   min-height: 100vh;
@@ -1509,26 +1511,25 @@ h2 {
   box-shadow: 0 20px 40px rgba(29, 131, 255, 0.3);
 }
 
-
-  .map-container {
-    flex: 1;
-    min-height: 450px;
-    min-width: 380px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+.map-container {
+  flex: 1;
+  min-height: 450px;
+  min-width: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .map-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .normal {
@@ -1551,13 +1552,17 @@ h2 {
   margin-bottom: 15px;
 }
 
+
 .footer {
   background-color: #f8f9fa;
-  padding: 20px 0;
+  padding: 20px 10px; /* Reduced padding for smaller screens */
   text-align: center;
   margin-top: 40px;
   border-radius: 10px;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
+
 
 .social-icons {
   display: flex;
@@ -1576,16 +1581,51 @@ h2 {
   color: #202328;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .letsconnect {
+    font-size: 3.5rem;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bluebox, .map-container {
+    min-width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .letsconnect {
-      font-size: 3rem;
+    font-size: 3rem;
   }
-  
-  .contact-content {
-      flex-direction: column;
+
+  .bluebox, .map-container {
+    padding: 30px;
   }
-  
-  .map-container {
-      min-height: 300px;
+
+  .normal, .bold, .email, .phoneNumber {
+    font-size: 1.2rem;
+  }
+  .footer {
+    padding: 15px 5px; /* Further reduced padding */
+    font-size: 0.9rem; /* Adjust font size for readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .letsconnect {
+    font-size: 2.5rem;
+  }
+
+  .bluebox, .map-container {
+    padding: 20px;
+  }
+
+  .normal, .bold, .email, .phoneNumber {
+    font-size: 1rem;
   }
 }
